@@ -44,7 +44,7 @@ body{
 }
 #second, #third, #fourth{
     border:2px solid teal;
-    border-radius:20%;
+    border-radius:70%;
     color:green;
     margin:2em;
 }
