@@ -13,10 +13,48 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
+        <h1>Hva heter jeg.</h1>
+        <p onclick="feil(this)" onmouseover="mouseoverfeil1(this)" onmouseout="mouseleavefeil1(this)">Kåre</p>
+        <p onclick="rett(this)" onmouseover="mouseoverriktig(this)" onmouseout="mouseleaveriktig(this)">Roy</p>
+        <p onclick="feil(this)" onmouseover="mouseoverfeil2(this)" onmouseout="mouseleavefeil2(this)">Per</p>
+        <h2 id='svar'></h2>
+        <script>
+            function feil(denne)
+            {
+                denne.innerHTML += " er feil";
+            }
+            function rett(denne)
+            {
+                denne.innerHTML += " er riktig!!";
+            }
+            function mouseoverfeil1(denne)
+            {
+                denne.innerHTML += " er feil";
+            }
+            function mouseleavefeil1(denne)
+            {
+                denne.innerHTML = "Kåre";
+            }
+            function mouseoverfeil2(denne)
+            {
+                denne.innerHTML += " er feil";
+            }
+            function mouseleavefeil2(denne)
+            {
+                denne.innerHTML = "Per";
+            }
+            function mouseoverriktig(denne)
+            {
+                denne.innerHTML += " er riktig!!";
+            }
+            function mouseleaveriktig(denne)
+            {
+                denne.innerHTML = "Roy";
+            }
+            function mousedouble()
+            {
+                console.log("DOUBLE!!");
+            }
+        </script>
     </body>
 </html>
