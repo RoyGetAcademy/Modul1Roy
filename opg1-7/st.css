@@ -65,3 +65,35 @@ p#Test, h1#Test{
 p#Test2{
     color:green;
 }
+#WhatsMyName{
+    margin:0;
+    position:relative;
+    left:50%;
+    transform: translateY(-50%);
+}
+#WhatsMyName p{
+    text-align:left;
+}
+button{
+    font-size:1em;
+    background-color:white;
+    border:0.2em solid red;
+    margin:0.5em;
+    padding:0.5em 1em;
+}
+table{
+    background-color:white;
+    width:15em;
+    height:15em;
+}
+td{
+    text-align:center;
+    font-size:1rem;
+}
+#kodeSvar{
+    color:white;
+}
+#testimage{
+    width: 10em;
+    height:10em;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="TestSite">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="st.css">
+    </head>
+    <body onload="vedlasting()">
+        <p>Ferdighet 1-5</p>
+        <p id="a"></p>
+        <p id="b"></p>
+        <br>
+        <img id="testimage" src="images/back.png" alt="Space">
+        <br><br>
+        <div class="wrap80">
+            <div id="main">
+                <p id="Test">Test</p>
+                <p id="Test2">Test2</p>
+            </div>
+        </div>
+        <div class="wrap33">
+            <div id="second">
+                <h1>This is a test</h1>
+                <p id="test3">Testing this stuffs</p>
+            </div>
+        </div>
+        <div class="wrap33">
+            <div id="third">
+                <h1>This is a test</h1>
+                <p id="test3">Testing er moro</p>
+            </div>
+        </div>
+        <div class="wrap33">
+            <div id="fourth">
+                <h1>This is a test</h1>
+                <p id="test3">Testing <span style="color:blue">th<span style="color:white">is</span></span> stuffs</p>
+            </div>
+        </div>
+        <br><br>
+        <div id="WhatsMyName">
+            <h1>Hva er mitt navn</h1>
+            <button onmouseout="changeBColBack(this)" onmouseover="changeBCol(this)" onclick="doThis(this)">Åge</button>
+            <button onmouseout="changeBColBack(this)" onmouseover="changeBCol(this)" onclick="doThis(this)">Roy</button>
+            <button onmouseout="changeBColBack(this)" onmouseover="changeBCol(this)" onclick="doThis(this)">Per</button>
+            <p id="Svar"></p>
+        </div>
+        <input onchange="KeyDownFunction(this)">
+        <br>
+        <br><br>
+        <table>
+            <tr>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+            </tr>
+            <tr>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+            </tr>
+            <tr>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+                <td onmouseover="OtoX(this)">o</td>
+            </tr>
+        </table>
+        <br><br>
+        <table>
+            <tr>
+                <td onmouseup="Kode(this)">1</td>
+                <td onmouseup="Kode(this)">2</td>
+                <td onmouseup="Kode(this)">3</td>
+            </tr>
+            <tr>
+                <td onmouseup="Kode(this)">4</td>
+                <td onmouseup="Kode(this)">5</td>
+                <td onmouseup="Kode(this)">6</td>
+            </tr>
+            <tr>
+                <td onmouseup="Kode(this)">7</td>
+                <td onmouseup="Kode(this)">8</td>
+                <td onmouseup="Kode(this)">9</td>
+            </tr>
+        </table>
+        <br>
+        <input id="kodeInput" disabled="diabled">
+        <br>
+        <h4 id="kodeSvar">Slå inn koden på pad ovenfor (1234)</h4>
+        <br><br>
+
+        <br><br>
+        <svg  class="svgtest" width="120" height="250">
+            <circle cx="50" cy="90" r="40" stroke="grey" stroke-width="4" fill="white" />
+            <circle cx="50" cy="40" r="30" stroke="grey" stroke-width="2" fill="white" />
+            <circle cx="40" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <circle cx="60" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <path   stroke="grey" stroke-width="1" fill="orange" d="M50, 40 q15,8 2,5"/>
+            <path   stroke="grey" stroke-width="1" fill="red" d="M33, 55 q15,5 35,-5"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M83, 65 q15,5 35,-15"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M21, 65 q15,5 35,-15"/>
+            Sorry, your browser does not support inline SVG.
+         </svg> 
+         <svg class="svgtest2" width="120" height="250">
+            <circle cx="50" cy="90" r="40" stroke="grey" stroke-width="4" fill="white" />
+            <circle cx="50" cy="40" r="30" stroke="grey" stroke-width="2" fill="white" />
+            <circle cx="40" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <circle cx="60" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <path   stroke="grey" stroke-width="1" fill="orange" d="M50, 40 q15,8 2,5"/>
+            <path   stroke="grey" stroke-width="1" fill="red" d="M33, 55 q15,5 35,-5"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M83, 65 q15,5 35,-35"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M21, 65 q15,5 35,-35"/>
+            Sorry, your browser does not support inline SVG.
+         </svg> 
+         <svg class="svgtest3" width="120" height="250">
+            <circle cx="50" cy="90" r="40" stroke="grey" stroke-width="4" fill="white" />
+            <circle cx="50" cy="40" r="30" stroke="grey" stroke-width="2" fill="white" />
+            <circle cx="40" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <circle cx="60" cy="30" r="5" stroke="grey" stroke-width="2" fill="black" />
+            <path   stroke="grey" stroke-width="1" fill="orange" d="M50, 40 q15,8 2,5"/>
+            <path   stroke="grey" stroke-width="1" fill="red" d="M33, 55 q15,5 35,-5"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M83, 65 q15,5 35,-35"/>
+            <path   stroke="grey" stroke-width="3" fill="white" d="M21, 65 q15,5 5,35"/>
+            Sorry, your browser does not support inline SVG.
+         </svg> 
+        
+        <p>Ferdighet 6 - Sette sammen tekst av flere deler  og  bruke dette til å bygge HTML dynamisk</p>
+
+        <input id="sizeSlider" type="range" min="100" max="500" step="10" oninput="showDiv()" />
+        <input id="borderSlider" type="range" min="1" max="50" step="1" oninput="showDiv()" />
+        <br /><input id="textInput" type="text" oninput="showDiv()" value="endre teksten!" />
+        <select id="colorChooser" onchange="showDiv()">
+            <option value="red">Red color</option>
+            <option selected value="green">Green color</option>
+            <option value="blue">Blue color</option>
+        </select>
+        <select id="frameChooser" onchange="showDiv()">
+            <option value="white">White frame</option>
+            <option selected value="grey">Grey frame</option>
+            <option value="none">No frame</option>
+        </select>
+        <div id="resultat"></div>
+        <div id="resultatHtml" style="font-family: monospace"></div>
+        <br><br>
+        
+        <p>Ferdighet 7</p>
+        <br>
+        <input id="slider1" type="range" min="1" max="50" step="1" oninput="showDiv2()" />
+        <input id="slider2" type="range" min="1" max="50" step="1" oninput="showDiv2()" />
+        <p id="bh1">.</p>
+        <p id="bh2">.</p>
+
+
+        <script>
+            function showDiv2()
+            {
+                var a=document.getElementById("slider1").value;
+                var b=document.getElementById("slider2").value;
+                var c=a*b;
+                var d=(a*2)*(b*2);
+                document.getElementById("bh1").innerHTML= ""+c;
+                document.getElementById("bh2").innerHTML= ""+d;
+            }
+            document.getElementById('a').innerHTML = '' + new Date().toTimeString();
+            function vedlasting()
+            {
+                document.getElementById('b').innerHTML = '' + new Date().toTimeString();
+            }
+            function doThis(that)
+            {
+                if(that.innerHTML=="Roy")document.getElementById("Svar").innerHTML="RIKTIG SVAR!!"
+                else{
+                    document.getElementById("Svar").innerHTML="DET ER FEIL!!"
+                }
+            }
+            function changeBCol(that)
+            {
+                that.style.color = "#ff0000";
+                console.log(that.style.color);
+            }
+            function changeBColBack(that)
+            {
+                that.style.color = "#000000";
+                console.log(that.style.color);
+            }
+            function KeyDownFunction(that)
+            {
+                console.log("You wrote: "+that.value);
+            }
+            function OtoX(that)
+            {
+                that.innerHTML="x";
+            }
+            function Kode(that)
+            {
+                document.getElementById("kodeInput").value+=that.innerHTML;
+                if(document.getElementById("kodeInput").value==1234)
+                {
+                    document.getElementById("kodeSvar").innerHTML="Riktig kode!"
+                }
+                
+            }
+            var resultatDiv = document.getElementById('resultat');
+            var resultatHtmlDiv = document.getElementById('resultatHtml');
+            var sizeSlider = document.getElementById('sizeSlider');
+            var textInput = document.getElementById('textInput');
+            var colorChooser = document.getElementById('colorChooser');
+
+            showDiv();
+
+            function showDiv() {
+                resultatDiv.innerHTML = '<div style="'
+                    + 'background-color: ' + colorChooser.value + ';'
+                    + 'border: 5px solid ' + frameChooser.value + ';'
+                    + 'border-radius: ' + borderSlider.value + '%;'
+                    + 'width: ' + sizeSlider.value + 'px;'
+                    + 'height: ' + sizeSlider.value + 'px;'
+                    + '">' +
+                    textInput.value + '</div>';
+                resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+            }
+        </script>
+    </body>
+</html>
