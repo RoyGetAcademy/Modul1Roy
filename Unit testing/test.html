@@ -1,0 +1,47 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.1.css">
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+    <script src="test.js"></script>
+    <script>
+        QUnit.test("Upper text - Roy",function (assert){
+            let actual = reverseText("roy");
+            let expected = "Roy";
+            assert.equal(actual,expected);
+        });
+        QUnit.test("Email - Roy",function (assert){
+            let actual = validateEmail("roy@gmail.com");
+            let expected = true;
+            assert.equal(actual,expected);
+        });
+        QUnit.test("Email2 - Roy",function (assert){
+            let actual = validateEmail2("roy.hagmansen@gmail.com");
+            let expected = true;
+            assert.equal(actual,expected);
+        });
+        QUnit.test("Email3 - Roy",function (assert){
+            let actual = validateEmail("roy@gmailcom");
+            let expected = false;
+            assert.equal(actual,expected);
+        });
+        QUnit.test("Email4 - Roy",function (assert){
+            let actual = validateEmail("roy @gmail.com");
+            let expected = true;
+            assert.equal(actual,expected);
+        });
+        QUnit.test("Email5 - Roy",function (assert){
+            let actual = validateEmail(" roy gmail.com");
+            let expected = false;
+            assert.equal(actual,expected);
+        });
+      </script>
+</body>
+</html>
