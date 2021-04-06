@@ -1,6 +1,8 @@
+newGame();
 function newGame()
 {
     computerNumber=Math.floor(Math.random() *100+1);
+    console.log(computerNumber)
     guessAnswer=""
     previousAnswer="";
     guesses=0;
@@ -14,7 +16,7 @@ function newGame()
 
 function compareGuess(that)
 {
-    guessNumber=Number(that.value)
+    var guessNumber=Number(that.value)
     if(guesses<10 && guessNumber == computerNumber)
     {
         guesses++;
@@ -42,11 +44,11 @@ function compareGuess(that)
         GuessesStr="You have used: "+guesses+" guesses.";
         lowHigh="Number is between "+low+" and "+high;
     }
-    else if(guesses>=10)
+    else
     {
         previousAnswer="";
         GuessesStr="";
-        guessAnswer="YOU LOOSE";
+        guessAnswer="You Won with "+ guesses +" guesses";
     }
     updateNow();
 }

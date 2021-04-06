@@ -15,7 +15,7 @@ function updateNow()
 {
     document.getElementById("app").innerHTML=`
     <div id="GuessBack">
-        <button id="newGame" onClick="newGame()">New Game</button>
+        <button id="newGame" onClick="newGame2()">New Game</button>
         <h3>Guess a number between 1 and 100</h3>
         <div>${lowHigh}</div>
         <input id="Numerics" type="text" min="1" max="100" onchange="compareGuess(this)" placeholder="Number Here">${numberGuess}</input>
