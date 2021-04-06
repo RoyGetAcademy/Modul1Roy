@@ -15,14 +15,14 @@ function newGame()
 function compareGuess(that)
 {
     guessNumber=Number(that.value)
-    if(guessNumber == computerNumber)
+    if(guesses<10 && guessNumber == computerNumber)
     {
         guesses++;
         previousAnswer="";
         GuessesStr="";
         guessAnswer="You Won with "+ guesses +" guesses";
     }
-    else if(guessNumber<computerNumber)
+    else if(guesses<10 && guessNumber<computerNumber)
     {
         guesses++;
         if(guessNumber>low)low=guessNumber;
@@ -32,7 +32,7 @@ function compareGuess(that)
         GuessesStr="You have used: "+guesses+" guesses.";
         lowHigh="Number is between "+low+" and "+high;
     }
-    else
+    else if(guesses<10 && guessNumber>computerNumber)
     {
         guesses++;
         if(guessNumber<high)high=guessNumber;
@@ -41,6 +41,12 @@ function compareGuess(that)
         numberGuess="";
         GuessesStr="You have used: "+guesses+" guesses.";
         lowHigh="Number is between "+low+" and "+high;
+    }
+    else if(guesses>=10)
+    {
+        previousAnswer="";
+        GuessesStr="";
+        guessAnswer="YOU LOOSE";
     }
     updateNow();
 }
