@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.1.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+  
+    <div id="app"></div>
+        
+    <script src="Main.js"></script>
+    <script src="Controller.js"></script>
+    <script>
+        computerNumber=Math.floor(Math.random() *100+1);
+        guessAnswer=""
+        previousAnswer="";
+        guesses=0;
+        GuessesStr="";
+        lowHigh="";
+        numberGuess="";
+        low=0;
+        high=0;
+
+        function updateNow(){}
+        QUnit.test('high should be 100', function (assert) {
+            newGame();
+            var actual = high;
+            var expected = "100";
+            assert.equal(actual, expected);
+        });
+        QUnit.test('low should be 1', function (assert) {
+            newGame();
+            var actual = low;
+            var expected = "1";
+            assert.equal(actual, expected);
+        });
+        QUnit.test('This should fail', function (assert) {
+            newGame();
+            var actual = low;
+            var expected = "50";
+            assert.equal(actual, expected);
+        });
+    </script>
+</body>
