@@ -8,25 +8,41 @@
     <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
   
     <div id="app"></div>
-        
-    <script src="Main.js"></script>
-    <script src="Controller.js"></script>
     <script>
+        var computerNumber=30;
+        var guessNumber;
+        var guesses=0;
+        function compareGuessTest(guessNumber)
+        {
+            guesses++;
+            if(guesses<10 && guessNumber == computerNumber)
+            {
+                guessAnswer="You Won";
+            }
+            else if(guesses<10 && guessNumber<computerNumber)
+            {
+                guessAnswer="Number is to low";
+            }
+            else if(guesses<10 && guessNumber>computerNumber)
+            {
+                guessAnswer="Number is to high";
+            }
+        }
         function updateNow(){}
         QUnit.test('40 is to high', function (assert) {
-            compareGuess(40);
+            compareGuessTest(40);
             var actual = guessAnswer;
             var expected = "Number is to high";
             assert.equal(actual, expected);
         });
         QUnit.test('20 is to low', function (assert) {
-            compareGuess(20);
+            compareGuessTest(20);
             var actual = guessAnswer;
             var expected = "Number is to low";
             assert.equal(actual, expected);
         });
         QUnit.test('30 is right', function (assert) {
-            compareGuess(30);
+            compareGuessTest(30);
             var actual = guessAnswer;
             var expected = "You Won";
             assert.equal(actual, expected);

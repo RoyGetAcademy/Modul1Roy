@@ -1,5 +1,3 @@
-
-
 function compareGuess(guessNumber)
 {
     guesses++;

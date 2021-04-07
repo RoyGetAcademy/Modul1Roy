@@ -16,7 +16,7 @@ function updateNow()
 {
     document.getElementById("app").innerHTML=`
     <div id="GuessBack">
-        <button id="newGame" onClick="newGame2()">New Game</button>
+        <button id="newGame" onClick="newGame()">New Game</button>
         <h3>Guess a number between 1 and 100</h3>
         <div>${lowHigh}</div>
         <input id="Numerics" type="text" min="1" max="100" onchange="compareGuess(this.value)" placeholder="Number Here">${numberGuess}</input>
@@ -27,13 +27,11 @@ function updateNow()
     </div>
 `;
 }
-
-
 //Controller is in its own script.
 
 function newGame()
 {
-    computerNumber=30;//Math.floor(Math.random() *100+1);
+    computerNumber=Math.floor(Math.random() *100+1);
     guessAnswer=""
     previousAnswer="";
     guesses=0;
