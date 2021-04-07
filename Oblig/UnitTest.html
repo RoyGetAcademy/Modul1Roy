@@ -12,33 +12,23 @@
     <script src="Main.js"></script>
     <script src="Controller.js"></script>
     <script>
-        computerNumber=Math.floor(Math.random() *100+1);
-        guessAnswer=""
-        previousAnswer="";
-        guesses=0;
-        GuessesStr="";
-        lowHigh="";
-        numberGuess="";
-        low=0;
-        high=0;
-
         function updateNow(){}
-        QUnit.test('high should be 100', function (assert) {
-            newGame();
-            var actual = high;
-            var expected = "100";
+        QUnit.test('40 is to high', function (assert) {
+            compareGuess(40);
+            var actual = guessAnswer;
+            var expected = "Number is to high";
             assert.equal(actual, expected);
         });
-        QUnit.test('low should be 1', function (assert) {
-            newGame();
-            var actual = low;
-            var expected = "1";
+        QUnit.test('20 is to low', function (assert) {
+            compareGuess(20);
+            var actual = guessAnswer;
+            var expected = "Number is to low";
             assert.equal(actual, expected);
         });
-        QUnit.test('numberGuess should be nothing', function (assert) {
-            newGame();
-            var actual = numberGuess;
-            var expected = "";
+        QUnit.test('30 is right', function (assert) {
+            compareGuess(30);
+            var actual = guessAnswer;
+            var expected = "You Won";
             assert.equal(actual, expected);
         });
     </script>
