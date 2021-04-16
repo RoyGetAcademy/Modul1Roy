@@ -1,6 +1,6 @@
 function compareGuess(guessNumber)
 {
-    guesses++;
+    returnavalue();
     if(guesses<10 && guessNumber == computerNumber)
     {
         previousAnswer="";
@@ -32,4 +32,9 @@ function compareGuess(guessNumber)
         guessAnswer="You loose";// with "+ guesses +" guesses";
     }
     updateNow();
+}
+
+function returnavalue()
+{
+    return guesses++;
 }
