@@ -6,15 +6,14 @@ function LeggTil()
     let b=numbers.length;
     if(b<a)
     {
-        var testMeg = numbers.indexOf(Number(currentNumber)) !== -1;
-        if(testMeg==false)
+        if(inputValue!=undefined)
+        {
+            numbers.push(Number(inputValue));
+        }
+        else
         {
             numbers.push(currentNumber);
             currentNumber--;
-        }
-        else{
-            currentNumber--;
-            LeggTil();
         }
     }
     console.log(b + " " + a);
@@ -33,6 +32,7 @@ function KlikketPaa(that)
         chosenBar=that;
         visEllerIkke="";
     }
+    
     show();
 }
 
