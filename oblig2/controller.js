@@ -2,27 +2,36 @@
 
 function LeggTil()
 {
-    let a=numbersTotal.length;
-    let b=numbers.length;
-    if(b<a)
+    if(inputValue<11 || inputValue==null)
     {
-        if(inputValue!=undefined)
+        let a=numbersTotal.length;
+        let b=numbers.length;
+        if(b<a)
         {
-            numbers.push(Number(inputValue));
+            if(inputValue!=undefined)
+            {
+                numbers.push(Number(inputValue));
+            }
+            else
+            {
+                numbers.push(currentNumber);
+                currentNumber--;
+            }
         }
-        else
-        {
-            numbers.push(currentNumber);
-            currentNumber--;
-        }
+        console.log(b + " " + a);
+        console.log(numbers);
     }
-    console.log(b + " " + a);
-    console.log(numbers);
+    else
+    {
+        visTekst="Må være mellom 1 og 10";
+    }
+    
     show();
 }
 
 function KlikketPaa(that)
 {
+    valgt=that;
     if(chosenBar==that)
     {
         chosenBar="Ingen";
@@ -32,41 +41,34 @@ function KlikketPaa(that)
         chosenBar=that;
         visEllerIkke="";
     }
-    
     show();
 }
 
 function Endre()
 {
-    if(inputValue !== undefined && (inputValue >0 && inputValue < 11))
+    console.log("BeforeTest: "+inputValue);
+    if(inputValue >0 && inputValue < 11)
     {
-        var testMeg = numbers.indexOf(Number(inputValue)) !== -1;
-        if(testMeg===false)
-        {
-            const index = numbers.indexOf(chosenBar);
-            numbers[index] = Number(inputValue);
-            numbers;
-        }
-        else
-    {
-        visTekst="Tabbelen har allerede det ønskede nummeret.";
-    }
+        numbers[valgt] = Number(inputValue);
+        visTekst="Byttet";
+        console.log(numbers);
     }
     else
-    {
-        visTekst="Må være mellom 1 og 10";
-    }
+        {
+            visTekst="Må være mellom 1 og 10";
+        }
     show();
 }
 
 function Fjerne()
 {
-    const index = numbers.indexOf(chosenBar);
-    if (index > -1) {
+    const index = numbersTotal.indexOf(valgt);
+    if (index >= 0) {
         numbers.splice(index, 1);
     }
     visTekst="Fjernet 1 fra listen";
     chosenBar="Ingen";
+    valgt=-1;
     visEllerIkke="disabled";
     show();
 }

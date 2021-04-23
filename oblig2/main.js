@@ -3,14 +3,15 @@ var contentDiv = document.getElementById('content');
 
 // model
 var numbers = [1, 3, 5, 7, 8];
-var numbersTotal = [1,2,3,4,5,6,7,8,9,10];
+var numbersTotal = [0,1,2,3,4,5,6,7,8,9];
 let chosenBar="Ingen"; // Variabel for hvilken stolpe som er valgt
 let chosenBarARR=0;
-let inputValue; // Variabel for hva som er skrevet i input-feltet
+let inputValue=null; // Variabel for hva som er skrevet i input-feltet
 let visEllerIkke="disabled";
 let visTekst="";
 let currentNumber=10;
 let kant="white";
+let valgt=0;
 // view
 show();
 function show() {
@@ -31,7 +32,7 @@ function show() {
         Verdi:
         <input type="number" min="1" max="10" onchange="inputValue = this.value" />
         <button onclick="LeggTil()">Legg til stolpe</button>
-        <button onclick="Endre()" ${visEllerIkke}>Endre valgt stolpe</button><br />
+        <button onclick="Endre()" ${visEllerIkke}>Endre valgt stolpe</button>
         <button onclick="Fjerne()" ${visEllerIkke}>Fjerne valgt stolpe</button>
         <p>${visTekst}</p>
         `;

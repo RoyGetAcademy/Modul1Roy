@@ -17,6 +17,7 @@
         let visTekst="";
         let currentNumber=10;
         let kant="none";
+        let valgt=0;
 
         function show() {}
         QUnit.test('10 added', function (assert) {
@@ -34,8 +35,8 @@
             restart();
         });
         QUnit.test('Bytt 5 med 2', function (assert) {
-            chosenBar=5;
             inputValue=2;
+            valgt=2;
             Endre();
             var actual = numbers;
             var expected = [1, 3, 2, 7, 8];
@@ -43,7 +44,7 @@
             restart();
         });
         QUnit.test('Fjern 1', function (assert) {
-            chosenBar=1;
+            valgt=1;
             Fjerne();
             var actual = numbers;
             var expected = [3, 5, 7, 8];
