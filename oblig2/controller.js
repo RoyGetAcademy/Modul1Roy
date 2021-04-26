@@ -2,28 +2,14 @@
 
 function LeggTil()
 {
-    if(inputValue<11 || inputValue==null)
+    if(inputValue <1 || inputValue >10)
     {
-        let a=numbersTotal.length;
-        let b=numbers.length;
-        if(b<a)
-        {
-            if(inputValue!=undefined)
-            {
-                numbers.push(Number(inputValue));
-            }
-            else
-            {
-                numbers.push(currentNumber);
-                currentNumber--;
-            }
-        }
-        console.log(b + " " + a);
-        console.log(numbers);
+        visTekst="Må være mellom 1 og 10";
     }
     else
     {
-        visTekst="Må være mellom 1 og 10";
+        numbers.push(Number(inputValue));
+        inputValue=-1;
     }
     
     show();
@@ -31,16 +17,8 @@ function LeggTil()
 
 function KlikketPaa(that)
 {
-    valgt=that;
-    if(chosenBar==that)
-    {
-        chosenBar="Ingen";
-        visEllerIkke="disabled";
-    }
-    else{
-        chosenBar=that;
-        visEllerIkke="";
-    }
+    chosenBar = chosenBar === that ? "Ingen" : that;
+    visEllerIkke = chosenBar === "Ingen" ? "disabled" : "";
     show();
 }
 
@@ -49,7 +27,7 @@ function Endre()
     console.log("BeforeTest: "+inputValue);
     if(inputValue >0 && inputValue < 11)
     {
-        numbers[valgt] = Number(inputValue);
+        numbers[(chosenBar-1)] = Number(inputValue);
         visTekst="Byttet";
         console.log(numbers);
     }
@@ -57,18 +35,18 @@ function Endre()
         {
             visTekst="Må være mellom 1 og 10";
         }
+        inputValue=-1;
     show();
 }
 
 function Fjerne()
 {
-    const index = numbersTotal.indexOf(valgt);
-    if (index >= 0) {
-        numbers.splice(index, 1);
+    chosenBar-=1;
+    if (chosenBar >= 0) {
+        numbers.splice(chosenBar, 1);
     }
     visTekst="Fjernet 1 fra listen";
     chosenBar="Ingen";
-    valgt=-1;
     visEllerIkke="disabled";
     show();
 }
