@@ -32,8 +32,8 @@
         });
         QUnit.test('Du klikket på 5 2 ganger', function (assert) {
             numbers = [1, 3, 5, 7, 8];
-            KlikketPaa(5);
-            KlikketPaa(5);
+            KlikketPaa(1);
+            KlikketPaa(1);
             var actual = visEllerIkke;
             var expected = "disabled";
             assert.equal(actual, expected);
