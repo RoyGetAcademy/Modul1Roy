@@ -11,7 +11,6 @@ function LeggTil()
         numbers.push(Number(inputValue));
         inputValue=-1;
     }
-    
     show();
 }
 
