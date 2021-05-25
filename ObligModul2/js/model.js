@@ -1,7 +1,7 @@
 //Player stuff
 let difficulty="Easy";
 let player1="Player 1";//changes to the players name on input in start window
-let player1Score=0;//when player2 wins a row this number goes up. When it becomes 2 they win the round.
+let player1Score=0;//when player1 wins a row this number goes up. When it becomes 2 they win the round.
 let player2="Player 2";//changes to the players name on input in start window
 let player2Score=0;//when player2 wins a row this number goes up. When it becomes 2 they win the round.
 
