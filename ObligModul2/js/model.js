@@ -1,17 +1,24 @@
 const model ={
-    player: 
+    infoText:" ",//used for putting info of correct or wrong answers as well as WINNER IS!!(This is shown between the input field and the ticktacktoe)
+    turnText:" ",//used for who's turn it is shown to the right of input field
+
+    boxes: ["","","","","","","","",""],//Text for the 9 boxes
+    numbers:[0,0,0,0,0,0,0,0,0],//Randomly generated array of numbers for the boxes(The ones you guess)
+    rows: ["","",""],//This is for the text next to each row when someone wins a row.
+    difficulty: ["Easy", "Medium", "Hard"],//This is for computer difficulty. 
+
+    isComputer: false,
+    computer:
     {
-        difficulty:"Easy",
+        guess:0,
+        chance: [33, 66, 99]
+    },
+    players: 
+    {
         player1:"Player 1",
         player1Score:0,
         player2:"Player 2",
         player2Score:0
-    },
-    computer:
-    {
-        comp:false,
-        compGuess:0,
-        compChance:33
     },
     game:
     {
@@ -20,10 +27,6 @@ const model ={
         max:100,
         currentGuess:0
     },
-    numbers:
-    [
-        0,0,0,0,0,0,0,0,0
-    ],
     winners: 
     [
         {
@@ -32,28 +35,4 @@ const model ={
             wins:0
         }
     ],//This list gets added to when a new name is found in player1 or player2 and is used for stats
-    text:
-    {
-        infoText:" ",//used for putting info of correct or wrong answers as well as WINNER IS!!(This is shown between the input field and the ticktacktoe)
-        turnText:" "//used for who's turn it is shown to the right of input field
-    },
-    boxes:
-    {
-        box1:"",
-        box2:"",
-        box3:"",
-        box4:"",
-        box5:"",
-        box6:"",
-        box7:"",
-        box8:"",
-        box9:""
-    },//Boxes in the ticktacktoe
-    rows:
-    {
-        row1:"",
-        row2:"",
-        row3:""
-    }
 };
-
