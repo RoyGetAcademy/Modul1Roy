@@ -1,5 +1,6 @@
 const model = {
     page: 0,
+    message: "",
     infoText: "Computer won a row!", //used for putting info of correct or wrong answers as well as WINNER IS!!(This is shown between the input field and the ticktacktoe)
     turnText: "Per's turn", //used for who's turn it is shown to the right of input field
 
@@ -48,5 +49,3 @@ const model = {
             }
         ], //This list gets added to when a new name is found in player1 or player2 and is used for stats
 };
-let messageP1="";
-let messageP2="";

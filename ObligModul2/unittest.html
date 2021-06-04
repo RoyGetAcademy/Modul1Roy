@@ -40,7 +40,7 @@
             model.player1.name="Per";
             model.player2.name="";
             StartGame();
-            var actual = messageP2;
+            var actual = model.message;
             var expected = "You have to enter your name player 2";
             assert.deepEqual (actual, expected);
         });

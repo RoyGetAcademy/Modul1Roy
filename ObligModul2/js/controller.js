@@ -1,11 +1,11 @@
 function StartGame(){//Starts the game.. 
     if(model.player1.name==="")
     {
-        messageP1="You have to enter your name player 1";
+        model.message="You have to enter your name player 1";
     }
     else if(model.player2.name==="")
     {
-        messageP2="You have to enter your name player 2";
+        model.message="You have to enter your name player 2";
     }
     model.page=1;//Game page
     view();

@@ -25,14 +25,13 @@ function view() {
                         <input type="radio"disabled="true">
                         <input type="text" id="player1" class="myRadios" placeholder="Player 1 name" onchange="Player1Name(value)"><br>
                         <input type="radio" name ="Player2Check" required="true" onChange="notComp()">
-                        <input type="text" id="player2" class="myRadios" placeholder="Player 2 name" onchange="Player2Name(value)">
-                        <p>${messageP1}<br>
+                        <input type="text" id="player2" class="myRadios" placeholder="Player 2 name" onchange="Player2Name(value)"><br>
                         <input type="radio" name ="Player2Check" id="computer" class="myRadios" required="true" onchange="Computer(this)">
-                        <input type="text" id="player2comp" class="myRadios" Value="Computer" disabled="true">
-                        <p>${messageP2}<br>
+                        <input type="text" id="player2comp" class="myRadios" Value="Computer" disabled="true"><br>
                     </ul>
                 </div>
                 <input type="submit" id="startButton" value="Start new Game" onclick="StartGame()">
+                <p>${model.message}<p>
             </div>
         `
     }
