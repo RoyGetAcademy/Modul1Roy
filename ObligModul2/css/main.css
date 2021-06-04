@@ -15,7 +15,7 @@ body{
     background-color:honeydew;
 }
 #view2{
-    height:650px;
+    height:700px;
 }
 
 #Header{
@@ -86,7 +86,7 @@ body{
 
 
 .boxFrame{
-    margin:auto auto auto 100px;
+    margin:auto auto auto 60px;
     display:grid;
     grid-template-columns: auto auto auto auto auto;
     grid-column-gap: 1rem;
@@ -97,6 +97,8 @@ body{
 }
 
 .boxes{
+    width:50px;
+    height:50px;
     background-color:white;
     border:1px solid black;
     padding:20px;

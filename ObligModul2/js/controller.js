@@ -1,4 +1,12 @@
 function StartGame(){//Starts the game.. 
+    if(model.player1.name==="")
+    {
+        messageP1="You have to enter your name player 1";
+    }
+    else if(model.player2.name==="")
+    {
+        messageP2="You have to enter your name player 2";
+    }
     model.page=1;//Game page
     view();
 }
@@ -13,6 +21,12 @@ function Stats(){
 }
 
 function Restart(){//Gonna be used to reset the game.. no way!!
+    model.numbers=[NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN];
+    model.rows=["-", "-", "-"];
+    model.player1.score=0;
+    model.player2.score=0;
+    model.infoText="New game started.";
+    newNumber();
     view();
 }
 
@@ -23,19 +37,17 @@ function GuessChange(val){//The main controller for the game
 
         model.infoText = `${model.game.currentPlayerName} guessed right!<br>The number was ${guessChange}`;
         model.numbers[model.game.currentBox]=guessChange;
+        rowCheck();
         newNumber();
-        model.game.currentPlayerName = (model.game.currentPlayerName == model.player1.name)  ? model.player2.name : model.player1.name;
     }
     else{
         if(model.game.NumberToGuess > val && model.game.min < val)model.game.min= guessChange;
         else if(model.game.NumberToGuess < val && model.game.max > val)model.game.max= guessChange;
-        model.game.currentPlayerName = (model.game.currentPlayerName == model.player1.name)  ? model.player2.name : model.player1.name;
-
-        if(model.game.currentPlayerName=="Computer")
-        {
-            compTurn();
-        }
+        model.game.currentPlayerName = (model.game.currentPlayerName == model.player1.name) ? model.player2.name : model.player1.name;
         model.infoText= `Wrong guess. ${model.game.currentPlayerName}'s turn`;
+    }
+    if(model.game.currentPlayerName=="Computer"){
+        compTurn();
     }
     view();
 }
@@ -70,20 +82,14 @@ function compTurn(){
     if(model.computer.guess===model.game.NumberToGuess)
     {
         var useIt=Math.floor(Math.random() * 100 ) + 1;
-        if(model.difficulty=="Easy"){
-            if(useIt <= 99){
-                GuessChange(model.computer.guess);
-            }
+        if(model.difficulty=="Easy" && useIt <=99){
+            GuessChange(model.computer.guess);
         }
-        else if(model.difficulty=="Medium"){
-            if(useIt <= 66){
-                GuessChange(model.computer.guess);
-            }
+        else if(model.difficulty=="Medium" && useIt <= 66){
+            GuessChange(model.computer.guess);
         }
-        else if(model.difficulty=="Hard"){
-            if(useIt <= 33){
-                GuessChange(model.computer.guess);
-            }
+        else if(model.difficulty=="Hard" && useIt <= 33){
+            GuessChange(model.computer.guess);
         }
         else{
             compTurn();
@@ -94,8 +100,55 @@ function compTurn(){
     }
 }
 
-function newNumber()
+function rowCheck(){
+    if(Number.isFinite(model.numbers[0]) && Number.isFinite(model.numbers[1]) && Number.isFinite(model.numbers[2])){
+        if(model.rows[0]=== "-"){
+            model.rows[0]= `${model.game.currentPlayerName} 's row`;
+            rowPoints();
+        }
+    }
+    if(Number.isFinite(model.numbers[3]) && Number.isFinite(model.numbers[4]) && Number.isFinite(model.numbers[5])){
+        if(model.rows[1]=== "-"){
+            model.rows[1]= `${model.game.currentPlayerName} 's row`;
+            rowPoints();
+        }
+    }
+    if(Number.isFinite(model.numbers[6]) && Number.isFinite(model.numbers[7]) && Number.isFinite(model.numbers[8])){
+        if(model.rows[2]=== "-"){
+            model.rows[2]= `${model.game.currentPlayerName} 's row`;
+            rowPoints();
+        }
+    }
+}
+
+function rowPoints()
 {
+    if(model.game.currentPlayerName==model.player1.name){
+        model.player1.score += 1;
+        view();
+        if(model.player1.score==2){
+            var index = model.winners.find(winners => winners.name == model.game.currentPlayerName)
+            index.wins +=1;
+            setTimeout(wonGame, 500);
+        }
+    }
+    else if(model.game.currentPlayerName==model.player2.name){
+        model.player2.score += 1;
+        view();
+        if(model.player2.score==2){
+            var index = model.winners.find(winners => winners.name == model.game.currentPlayerName)
+            index.wins +=1;
+            setTimeout(wonGame,500);
+        }
+    }
+}
+
+function wonGame(){
+    alert(`${model.game.currentPlayerName} has won the game! New round starting shortly`)
+    setTimeout(Restart, 5000);
+}
+
+function newNumber(){
     let myIndexes=[];
     for (let i = 0; i < model.numbers.length; i++){
         if(isNaN(model.numbers[i])){

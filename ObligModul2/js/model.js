@@ -3,7 +3,7 @@ const model = {
     infoText: "Computer won a row!", //used for putting info of correct or wrong answers as well as WINNER IS!!(This is shown between the input field and the ticktacktoe)
     turnText: "Per's turn", //used for who's turn it is shown to the right of input field
 
-    numbers: [35, 15, 50, NaN, 45, 15, 12, 25, NaN],
+    numbers: [35, 15, 50, NaN, 45, 15, 12, NaN, NaN],
     rows: ["Computer's Row", "-", "-"], //This is for the text next to each row when someone wins a row.
     difficulty: "Easy", //This is for computer difficulty. 
 
@@ -48,3 +48,5 @@ const model = {
             }
         ], //This list gets added to when a new name is found in player1 or player2 and is used for stats
 };
+let messageP1="";
+let messageP2="";

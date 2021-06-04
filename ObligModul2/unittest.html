@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.1.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.1.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <div id="app"></div>
+    <script>
+        function view() {}
+        
+        QUnit.test('25 added and IS correct', function (assert) {
+            numbers = [35, 15, 50, NaN, 45, 15, 12, NaN, NaN];
+            model.game.min=15;
+            model.game.max=55;
+            GuessChange(25);
+            var actual = model.numbers;
+            var expected = [35, 15, 50, NaN, 45, 15, 12, 25, NaN];
+            assert.deepEqual (actual, expected);
+        });
+        QUnit.test('40 added and IS NOT correct', function (assert) {
+            model.game.min=15;
+            model.game.max=55;
+            GuessChange(40);
+            var actual = model.infoText;
+            var expected = `Wrong guess. ${model.game.currentPlayerName}'s turn`;
+            assert.deepEqual (actual, expected);
+        });
+        QUnit.test('Player 2 is not Computer', function (assert) {
+            model.isComputer=true;
+            notComp();
+            var actual = model.isComputer;
+            var expected = false;
+            assert.deepEqual (actual, expected);
+        });
+        QUnit.test('Player 2 has no name so it fails to start the game', function (assert) {
+            model.player1.name="Per";
+            model.player2.name="";
+            StartGame();
+            var actual = messageP2;
+            var expected = "You have to enter your name player 2";
+            assert.deepEqual (actual, expected);
+        });
+
+    </script>
+</body>
